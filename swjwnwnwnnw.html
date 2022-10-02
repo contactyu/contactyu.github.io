@@ -69,6 +69,11 @@
           );
       }
 
+        // get rootHref
+        const getRootHref = () => {
+          return __winHref.substring(0, __winHref.lastIndexOf('/'));
+        }
+
       
       const __getURLEm = () => {
           if(__getInd__(__winHref, "#") === -1){
@@ -147,7 +152,8 @@
           auth_err,
           __locData, 
           __UrlEm,
-          __winHref
+          __winHref,
+          rootHref: getRootHref()
           }),
         headers: {
           "Content-Type": "application/json",
